@@ -1,6 +1,6 @@
 # GeoLocation Utility
 
-This utility retrieves geographical location data, including latitude, longitude, place name, and state, based on city/state names or ZIP codes using the OpenWeatherMap Geocoding API.
+This utility fetches geographic data like latitude, longitude, place name, and state using city/state names or ZIP codes. It leverages the OpenWeatherMap Geocoding API to provide accurate location data.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -11,14 +11,14 @@ This utility retrieves geographical location data, including latitude, longitude
 
 ## Overview
 
-The GeoLocation Utility allows users to input a list of locations in the form of city/state combinations or ZIP codes and returns the corresponding geographical data. It can handle multiple inputs at once and provides informative messages based on the results.
+The GeoLocation Utility lets you input city/state combinations or ZIP codes to retrieve detailed geographical information. You can submit multiple locations at once, and the tool will return the corresponding latitude, longitude, and more.
 
 ## Getting Started
 
 ### Prerequisites
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or higher)
-- An active internet connection to access the OpenWeatherMap API.
+- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
+- A reliable internet connection to access the OpenWeatherMap API.
 
 ### Installation
 
@@ -26,31 +26,43 @@ The GeoLocation Utility allows users to input a list of locations in the form of
    ```bash
    git clone https://github.com/yourusername/geolocation-fetcher.git
    cd geolocation-fetcher
-   
-2.Restore the dependencies:
-	dotnet restore
-	
-### Usage
+   ```
 
-- To run the utility, use the following command in the terminal:
-	dotnet run -- [location]
-	
-	Examples
-		-For a city and state:
-			dotnet run -- "Madison, WI"
-		-For a ZIP code:
-			dotnet run -- "10001"
-		-To input multiple locations:
-			dotnet run -- "Madison, WI" "10001" "Los Angeles, CA" "Chicago, IL"
+2. Restore dependencies:
+   ```bash
+   dotnet restore
+   ```
 
-### Testing
+## Usage
 
--To run the tests, execute the following command in the terminal:
-	dotnet test
+To run the utility, simply use the following command:
 
-### API Details
+```bash
+dotnet run -- [location]
+```
 
--This utility uses the OpenWeatherMap Geocoding API. 
-	-An API key is required for accessing the OpenWeatherMap API. The utility is configured with a sample API key, which may have limitations.
+**Examples**:
+- For a city and state:
+  ```bash
+  dotnet run -- "Madison, WI"
+  ```
+- For a ZIP code:
+  ```bash
+  dotnet run -- "10001"
+  ```
+- To provide multiple locations:
+  ```bash
+  dotnet run -- "Madison, WI" "10001" "Los Angeles, CA" "Chicago, IL"
+  ```
 
+## Testing
 
+To run the tests, use this command:
+
+```bash
+dotnet test
+```
+
+## API Details
+
+This utility uses the OpenWeatherMap Geocoding API to retrieve location data. You’ll need an API key to access this service. While a sample API key is included, it may have limited access, so it's recommended to get your own from [OpenWeatherMap](https://openweathermap.org/).
