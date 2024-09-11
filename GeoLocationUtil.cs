@@ -1,12 +1,15 @@
 ﻿using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 public class GeoLocationUtil
 {
-    private static readonly string ApiKey = "f897a99d971b5eef57be6fafa0d83239"; // Use your API key
     private static readonly HttpClient client = new HttpClient();
+    private static string ApiKey;
 
     public static async Task Main(string[] args)
     {
+        ApiKey = LoadApiKey("appsettings.json");
+
         if (args.Length == 0)
         {
             Console.WriteLine("Please provide location inputs.");
@@ -105,5 +108,20 @@ public class GeoLocationUtil
     private static bool IsZipCode(string input)
     {
         return int.TryParse(input, out _);
+    }
+
+    private static string LoadApiKey(string configFilePath)
+    {
+        try
+        {
+            string json = File.ReadAllText(configFilePath);
+            var config = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(json);
+            return config?["ApiSettings"]?["OpenWeatherMapApiKey"];
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading API key: {ex.Message}");
+            return null;
+        }
     }
 }
