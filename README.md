@@ -5,6 +5,7 @@ This utility fetches geographic data like latitude, longitude, place name, and s
 ## Table of Contents
 - [Overview](#overview)
 - [Getting Started](#getting-started)
+- [Configuration](#configuration)
 - [Usage](#usage)
 - [Testing](#testing)
 - [API Details](#api-details)
@@ -32,6 +33,29 @@ The GeoLocation Utility lets you input city/state combinations or ZIP codes to r
    ```bash
    dotnet restore
    ```
+
+### Configuration
+
+The application requires an API key to access the OpenWeatherMap Geocoding API. For security reasons, the API key should be stored in the `appsettings.json` file.
+
+1. Create an `appsettings.json` file in the root of the project with the following structure:
+
+   ```json
+   {
+     "ApiSettings": {
+       "OpenWeatherMapApiKey": "your-api-key-here"
+     }
+   }
+   ```
+
+2. Ensure that your `appsettings.json` file is **not** committed to version control by adding it to your `.gitignore` file:
+
+   ```
+   # Ignore appsettings file with API keys
+   appsettings.json
+   ```
+
+3. You can obtain your own API key from [OpenWeatherMap](https://openweathermap.org/).
 
 ## Usage
 
