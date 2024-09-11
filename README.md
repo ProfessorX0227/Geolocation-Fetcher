@@ -36,7 +36,7 @@ The GeoLocation Utility lets you input city/state combinations or ZIP codes to r
 
 ### Configuration
 
-The application requires an API key to access the OpenWeatherMap Geocoding API. For security reasons, the API key should be stored in the `appsettings.json` file.
+The application requires an API key to access the OpenWeatherMap Geocoding API. For security, the API key should be stored in an `appsettings.json` file, which is already excluded from version control.
 
 1. Create an `appsettings.json` file in the root of the project with the following structure:
 
@@ -48,14 +48,7 @@ The application requires an API key to access the OpenWeatherMap Geocoding API. 
    }
    ```
 
-2. Ensure that your `appsettings.json` file is **not** committed to version control by adding it to your `.gitignore` file:
-
-   ```
-   # Ignore appsettings file with API keys
-   appsettings.json
-   ```
-
-3. You can obtain your own API key from [OpenWeatherMap](https://openweathermap.org/).
+2. You can obtain your own API key from [OpenWeatherMap](https://openweathermap.org/).
 
 ## Usage
 
